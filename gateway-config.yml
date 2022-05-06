@@ -1,0 +1,28 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: flight-catering
+          uri: lb://flight-catering
+          predicates:
+            - Path=/catering/**
+          filters:
+          - StripPrefix=1
+        - id: flight-order
+          uri: lb://flight-order
+          predicates:
+            - Path=/order/**
+          filters:
+            - StripPrefix=1
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
