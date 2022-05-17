@@ -1,5 +1,5 @@
 server:
-  port: 9000
+  port: 90005
 spring:
   application:
     name: flight-catering
