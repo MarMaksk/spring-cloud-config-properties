@@ -13,13 +13,19 @@ spring:
         - id: flight-catering
           uri: lb://flight-catering
           predicates:
-            - Path=/catering/**
+            - Path=/avia/catering/**
           filters:
           - StripPrefix=1
         - id: flight-order
           uri: lb://flight-order
           predicates:
-            - Path=/order/**
+            - Path=/avia/order/**
+          filters:
+            - StripPrefix=1
+        - id: flight-user
+          uri: lb://flight-user
+          predicates:
+            - Path=/avia/**
           filters:
             - StripPrefix=1
 eureka:
