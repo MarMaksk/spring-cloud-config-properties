@@ -1,0 +1,25 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: flight-order
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/orders
+    username: compose-postgres
+    password: compose-postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate.ddl-auto: create
