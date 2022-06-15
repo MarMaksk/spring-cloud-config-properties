@@ -26,10 +26,7 @@ spring:
           - StripPrefix=1
         - id: flight-order
           uri: lb://flight-order
-          predicates:
-            - Path=/avia/order/**
-          filters:
-            - StripPrefix=2
+
         - id: flight-user
           uri: lb://flight-user
           predicates:
