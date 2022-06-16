@@ -30,6 +30,7 @@ spring:
             - Path=/avia/order/**
           filters:
             - StripPrefix=2
+            - RoleAuth=ADMIN
         - id: flight-user
           uri: lb://flight-user
           predicates:
