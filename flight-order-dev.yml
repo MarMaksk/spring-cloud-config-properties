@@ -15,7 +15,7 @@ eureka:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/orders
+    url: jdbc:postgresql://db:5432/orders
     username: compose-postgres
     password: compose-postgres
     driver-class-name: org.postgresql.Driver
