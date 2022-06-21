@@ -3,6 +3,20 @@ server:
 spring:
   application:
     name: flight-order
+  datasource:
+    url: jdbc:postgresql://localhost:5432/flight
+    username: compose-postgres
+    password: compose-postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        default_schema: order
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate.ddl-auto: validate
+  flyway:
+    schemas: order
   kafka:
     producer:
       bootstrap-servers: localhost:9092
@@ -12,14 +26,3 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/orders
-    username: compose-postgres
-    password: compose-postgres
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    show-sql: true
-    hibernate.ddl-auto: update
