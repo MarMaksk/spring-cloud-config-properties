@@ -4,7 +4,7 @@ spring:
   application:
     name: flight-order
   datasource:
-    url: jdbc:postgresql://localhost:5432/flight
+    url: jdbc:postgresql://db:5432/flight
     username: compose-postgres
     password: compose-postgres
     driver-class-name: org.postgresql.Driver
