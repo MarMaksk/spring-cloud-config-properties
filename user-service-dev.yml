@@ -2,7 +2,7 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     username: compose-postgres
-    url: jdbc:postgresql://localdbhost:5432/flight
+    url: jdbc:postgresql://localhost:5432/flight
     password: compose-postgres
   flyway:
     schemas: users
