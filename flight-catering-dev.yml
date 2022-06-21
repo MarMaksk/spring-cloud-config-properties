@@ -19,7 +19,14 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
     hibernate.ddl-auto: update
-    
+  mail:
+    host: smtp.mail.ru
+    username: aiva-project-send@mail.ru
+    password: jVZmiiwFusDCTg0S1FsH
+    port: 465
+    protocol: smtps
+    debug: true
+
 eureka:
   client:
     service-url:
