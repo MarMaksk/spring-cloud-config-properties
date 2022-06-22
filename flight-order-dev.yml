@@ -9,11 +9,11 @@ spring:
     url: jdbc:postgresql://db:5432/flight
     password: compose-postgres
   flyway:
-    schemas: catering
+    schemas: order
   jpa:
     properties:
       hibernate:
-        default_schema: catering
+        default_schema: order
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: 'true'
     hibernate:
