@@ -11,19 +11,20 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
   datasource:
-    url: jdbc:postgresql://db:5432/flight
-    username: compose-postgres
-    password: compose-postgres
     driver-class-name: org.postgresql.Driver
+    username: compose-postgres
+    url: jdbc:postgresql://db:5432/flight
+    password: compose-postgres
+  flyway:
+    schemas: order
   jpa:
     properties:
       hibernate:
-        default_schema: catering
+        default_schema: order
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-    show-sql: true
-    hibernate.ddl-auto: validate
-  flyway:
-    schemas: catering
+    show-sql: 'true'
+    hibernate:
+      ddl-auto: validate
   mail:
     host: smtp.mail.ru
     username: aiva-project-send@mail.ru

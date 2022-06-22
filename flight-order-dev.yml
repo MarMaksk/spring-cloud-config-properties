@@ -4,19 +4,20 @@ spring:
   application:
     name: flight-order
   datasource:
-    url: jdbc:postgresql://db:5432/flight
-    username: compose-postgres
-    password: compose-postgres
     driver-class-name: org.postgresql.Driver
+    username: compose-postgres
+    url: jdbc:postgresql://db:5432/flight
+    password: compose-postgres
+  flyway:
+    schemas: catering
   jpa:
     properties:
       hibernate:
-        default_schema: order
+        default_schema: catering
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-    show-sql: true
-    hibernate.ddl-auto: validate
-  flyway:
-    schemas: order
+    show-sql: 'true'
+    hibernate:
+      ddl-auto: validate
   kafka:
     producer:
       bootstrap-servers: localhost:9092
